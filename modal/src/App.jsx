@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={() => setModalIsOpen(true)}>open modal</button>
-      {modalIsOpen ? <Modal><h2>modal is open</h2></Modal> : null}
+      {modalIsOpen ? <Modal onClose={() => setModalIsOpen(false)}><h2>modal is open</h2></Modal> : null}
     </div>
   );
 }
