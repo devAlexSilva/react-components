@@ -28,7 +28,8 @@ function App() {
       synopsis: list[index].synopsis,
       episodes: list[index].episodes,
       rank: list[index].rank,
-      score: list[index].score
+      score: list[index].score,
+      image: list[index].images.webp.large_image_url
     })
 
     setModalIsOpen(true)
@@ -60,16 +61,18 @@ function App() {
       {modalIsOpen ? (
         <Modal
           onClose={() => setModalIsOpen(false)}>
-          <div className={side - left}>
-            <h2>
-              {modalInfo.title}
-            </h2>
-            <span> ep: {modalInfo.episodes}</span>
-            <span>rank: {modalInfo.rank}</span>
-            <span>score: {modalInfo.score}</span>
-          </div>
-          <div className={side-rigth}>
-
+          <div className="info">
+            <div className="side-left">
+              <h2>
+                {modalInfo.title}
+              </h2>
+              <span> ep: {modalInfo.episodes}</span>
+              <span>rank: {modalInfo.rank}</span>
+              <span>score: {modalInfo.score}</span>
+            </div>
+            <div className="side-right">
+              <img src={modalInfo.image} alt={modalInfo.title} />
+            </div>
           </div>
           <p>
             {modalInfo.synopsis}
