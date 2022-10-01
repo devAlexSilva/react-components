@@ -7,13 +7,11 @@ import { dark } from "./styles/themes/Dark";
 import { useState } from "react";
 
 function App() {
-  const [themeIsDark, setThemeIsDark] = useState(false)
   const [currentTheme, setCurrentTheme] = useState(light)
 
   const toogleTheme = () => {
     console.log("trocou")
-    themeIsDark ? setCurrentTheme(light) : setCurrentTheme(dark)
-    setThemeIsDark(!themeIsDark)
+    setCurrentTheme(currentTheme.title === "light" ? dark : light)  
   }
 
   return (
