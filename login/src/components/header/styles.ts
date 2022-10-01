@@ -14,9 +14,6 @@ export const Logo = styled.div`
   font-weight: 800;
   font-family: sans-serif;
   cursor: pointer;
-  color: ${props => props.theme.colors.text};
 `;
 
-export const Theme = styled.div`
-    color: ${props => props.theme.colors.text};
-`;
+export const Theme = styled.button``;

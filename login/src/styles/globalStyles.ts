@@ -10,6 +10,6 @@ export const GlobalStyles = createGlobalStyle`
     body {
         font-size: 16px;
         background-color: ${props => props.theme.colors.backgroundColor};
-        color: #f5f5f5;
+        color: ${props => props.theme.colors.text};
     }
 `
