@@ -4,13 +4,12 @@ import { GlobalStyles } from "./styles/globalStyles";
 import { ThemeProvider } from "styled-components";
 import { light } from "./styles/themes/Light";
 import { dark } from "./styles/themes/Dark";
-import { useState } from "react";
+import { useStorageTheme } from "./hooks/storageTheme";
 
 function App() {
-  const [currentTheme, setCurrentTheme] = useState(light)
+  const [currentTheme, setCurrentTheme] = useStorageTheme("theme", light);
 
   const toogleTheme = () => {
-    console.log("trocou")
     setCurrentTheme(currentTheme.title === "light" ? dark : light)  
   }
 
