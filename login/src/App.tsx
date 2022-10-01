@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { light } from "./styles/themes/Light";
 import { dark } from "./styles/themes/Dark";
 import { useStorageTheme } from "./hooks/storageTheme";
+import { Form } from "./components/form";
 
 function App() {
   const [currentTheme, setCurrentTheme] = useStorageTheme("theme", light);
@@ -17,6 +18,7 @@ function App() {
     <ThemeProvider theme={currentTheme}>
       <GlobalStyles />
       <Header toogleTheme={toogleTheme}/>
+      <Form />
     </ThemeProvider>
   );
 }
