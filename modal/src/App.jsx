@@ -8,6 +8,7 @@ function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [list, setList] = useState([])
   const [modalInfo, setModalInfo] = useState({})
+
   const reload = useCallback(() => {
     (async () => {
       const animeList = await jikanApi(10, 10)
@@ -58,7 +59,7 @@ function App() {
           })
         }
       </ul>
-      {modalIsOpen ? (
+      {modalIsOpen && (
         <Modal
           onClose={() => setModalIsOpen(false)}>
           <div className="info">
@@ -78,7 +79,7 @@ function App() {
             {modalInfo.synopsis}
           </p>
         </Modal>
-      ) : null
+      )
       }
     </div>
   );
